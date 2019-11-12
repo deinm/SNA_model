@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
+import pandas as pd
 
 driver = webdriver.Chrome('/Users/deinm/Downloads/chromedriver')
 driver.implicitly_wait(3)
@@ -29,11 +30,14 @@ base_URL = 'https://models.com/rankings/ui/infinite/Runway-All/'
 
 model_namelist = []
 model_walklist = []
-model_ocnumlist = []
+model_opennumlist = []
+model_closenumlist = []
 model_nationallist = []
 model_personallist = []
 
 for i in range(1,241):
+    print(i)
+    
     URL = base_URL + str(i)
     driver.get(URL)
     html = driver.page_source
@@ -48,13 +52,19 @@ for i in range(1,241):
         single_name = name.find('h3').text
         data = name.find_all('li')
         walked = data[0].text
-        oc_num = 'None'
+        open_num = 0
+        close_num = 0
         if len(data)==2:
             oc_num = data[1].text
+            oc_num = oc_num.split(' ')
+            oc_num = oc_num[1].split('/')
+            open_num = oc_num[0]
+            close_num = oc_num[1]
 
         model_namelist.append(single_name)
         model_walklist.append(walked)
-        model_ocnumlist.append(oc_num)
+        model_opennumlist.append(open_num)
+        model_closenumlist.append(close_num)
 
     for single_url in model_url:
         driver.get(single_url)
@@ -65,6 +75,7 @@ for i in range(1,241):
         nationality = 'None'
         try:
             nationality = soup.find('div',{'id':'biodata'}).find('div').text
+            nationality = nationality.split(':')[1].strip()
         except:
             pass
 
@@ -89,4 +100,15 @@ for i in range(1,241):
 
         model_personallist.append(personal_dict)
 
-    print(model_personallist)
+    # print(model_personallist)
+
+final_data = pd.DataFrame(model_namelist,columns=['Name'])
+final_data.insert(1,'Walk',model_walklist,True)
+final_data.insert(2,'Open',model_opennumlist,True)
+final_data.insert(3,'Close',model_closenumlist,True)
+final_data.insert(4,'Nationality',model_nationallist,True)
+final_data.insert(5,'Profile',model_personallist,True)
+
+print(final_data)
+
+final_data.to_csv('model_data.csv',index=False)
