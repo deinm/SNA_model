@@ -2,6 +2,19 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import pandas as pd
 
+def save_data():
+    final = pd.DataFrame(model_namelist,columns=['Name'])
+    final.insert(1,'Walk',model_walklist,True)
+    final.insert(2,'Open',model_opennumlist,True)
+    final.insert(3,'Close',model_closenumlist,True)
+    final.insert(4,'Nationality',model_nationallist,True)
+    final.insert(5,'Profile',model_personallist,True)
+    final.insert(6,'Follower', model_followerlist,True)
+
+    print(final)
+
+    final.to_csv('model_2019SS.csv',index=False)
+
 driver = webdriver.Chrome('/Users/deinm/Downloads/chromedriver')
 driver.implicitly_wait(3)
 
@@ -26,7 +39,14 @@ while pagedowns < 72:
         pagedowns+=1
 '''
 
-base_URL = 'https://models.com/rankings/ui/infinite/Runway-All/'
+# 2020SS
+# base_URL = 'https://models.com/rankings/ui/infinite/Runway-All/'
+
+# 2019FW
+# base_URL = 'https://models.com/rankings/ui/infinite/Runway-All-2019JunDec/'
+
+# 2019SS
+base_URL = 'https://models.com/rankings/ui/infinite/Runway-All-2019JanMay/'
 
 model_namelist = []
 model_walklist = []
@@ -34,16 +54,18 @@ model_opennumlist = []
 model_closenumlist = []
 model_nationallist = []
 model_personallist = []
+model_followerlist = []
 
-for i in range(1,241):
+for i in range(1,241,10):
     print(i)
-    
+
     URL = base_URL + str(i)
     driver.get(URL)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
 
     names = soup.find_all('div',{'class':'small-12 medium-3 columns showtotals'})
+    # print(names)
 
     model_url = []
 
@@ -51,9 +73,11 @@ for i in range(1,241):
         model_url.append(name.find('h3').find('a')['href'])
         single_name = name.find('h3').text
         data = name.find_all('li')
-        walked = data[0].text
+        walked = data[0].text.split(' ')[2]
+
         open_num = 0
         close_num = 0
+
         if len(data)==2:
             oc_num = data[1].text
             oc_num = oc_num.split(' ')
@@ -100,15 +124,17 @@ for i in range(1,241):
 
         model_personallist.append(personal_dict)
 
-    # print(model_personallist)
+        # print(model_personallist)
 
-final_data = pd.DataFrame(model_namelist,columns=['Name'])
-final_data.insert(1,'Walk',model_walklist,True)
-final_data.insert(2,'Open',model_opennumlist,True)
-final_data.insert(3,'Close',model_closenumlist,True)
-final_data.insert(4,'Nationality',model_nationallist,True)
-final_data.insert(5,'Profile',model_personallist,True)
+        try:
+            follower = soup.find('div',{'id':'socialLinks'}).find('li').text.strip()
+            # print(follower)
+            model_followerlist.append(follower)
+        except:
+            model_followerlist.append('-')
 
-print(final_data)
+    if i%10==1:
+        print("Saved",i)
+        save_data()
 
-final_data.to_csv('model_data.csv',index=False)
+save_data()
