@@ -43,11 +43,10 @@ while pagedowns < 72:
 # base_URL = 'https://models.com/rankings/ui/infinite/Runway-All/'
 
 # 2019FW
-# base_URL = 'https://models.com/rankings/ui/infinite/Runway-All-2019JunDec/'
+# base_URL = 'https://models.com/rankings/ui/infinite/Runway-All-2019JanMay/'
 
 # 2019SS
-base_URL = 'https://models.com/rankings/ui/infinite/Runway-All-2019JanMay/'
-
+base_URL = 'https://models.com/rankings/ui/infinite/Runway-All-2018JunDec/'
 model_namelist = []
 model_walklist = []
 model_opennumlist = []
