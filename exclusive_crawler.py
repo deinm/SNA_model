@@ -67,11 +67,17 @@ for i in range(1,241,10):
             index+=1
 
         nameindex+=1
-
     break
 
 print(data_dict)
 
 with open('exclusive_2020SS.csv','w') as f:
     for key, values in data_dict.items():
-        f.write(str(key)+","+str(values)+'\n')
+        print(values)
+        values = str(values)[1:-1]
+        values = values.split(',')
+        final = []
+        for single_value in values:
+            final.append(single_value.strip()[1:-1])
+
+        f.write(str(key)+","+','.join(final)+'\n')
