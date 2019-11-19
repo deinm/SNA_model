@@ -1,9 +1,23 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
+def save_data():
+    print(data_dict)
+
+    with open('exclusive_2019SS.csv', 'w') as f:
+        for key, values in data_dict.items():
+            print(values)
+            values = str(values)[1:-1]
+            values = values.split(',')
+            final = []
+            for single_value in values:
+                final.append(single_value.strip()[1:-1])
+
+            f.write(str(key) + "," + ','.join(final) + '\n')
+
 driver = webdriver.Chrome('/Users/deinm/Downloads/chromedriver')
 driver.implicitly_wait(3)
-base_URL = 'https://models.com/rankings/ui/infinite/Runway-All/'
+base_URL = 'https://models.com/rankings/ui/infinite/Runway-All-2018JunDec/1'
 
 # login
 driver.get('https://models.com/account/')
@@ -48,7 +62,11 @@ for i in range(1,241,10):
                 break
 
             shows = soup.find('div', {'class': 'active-tab-body'})
-            shows = shows.find_all('div',{'class':'row'})
+            if shows is not None:
+                shows = shows.find_all('div',{'class':'row'})
+            else:
+                index += 1
+                continue
 
             for single_show in shows:
                 data = single_show.find('div',{'class':'small-9 columns'})
@@ -65,19 +83,10 @@ for i in range(1,241,10):
                             print(model_namelist[nameindex],showname,single_credit.text)
 
             index+=1
-
         nameindex+=1
-    break
 
-print(data_dict)
+    if i%10==1:
+        print(i,data_dict)
+        save_data()
 
-with open('exclusive_2020SS.csv','w') as f:
-    for key, values in data_dict.items():
-        print(values)
-        values = str(values)[1:-1]
-        values = values.split(',')
-        final = []
-        for single_value in values:
-            final.append(single_value.strip()[1:-1])
-
-        f.write(str(key)+","+','.join(final)+'\n')
+save_data()
