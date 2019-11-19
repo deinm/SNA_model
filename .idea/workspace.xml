@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a5168f38-44b6-4fa0-b2cf-299f939ec9b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exclusive_2020SS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/exclusive_2020SS.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exclusive_crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/exclusive_crawler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/change_format.py" beforeDir="false" afterPath="$PROJECT_DIR$/change_format.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/format_2019SS.csv" beforeDir="false" afterPath="$PROJECT_DIR$/format_2019SS.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +14,8 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/SNA_model$exclusive_crawler.coverage" NAME="exclusive_crawler Coverage Results" MODIFIED="1574051575909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SNA_model$change_format.coverage" NAME="change_format Coverage Results" MODIFIED="1574132994489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SNA_model$change_format.coverage" NAME="change_format Coverage Results" MODIFIED="1574146192532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SNA_model$formatcsv_to_excel.coverage" NAME="formatcsv_to_excel Coverage Results" MODIFIED="1574142517100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SNA_model$prac.coverage" NAME="prac Coverage Results" MODIFIED="1573801338445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SNA_model$model_crawler.coverage" NAME="model_crawler Coverage Results" MODIFIED="1573662134784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -45,35 +46,35 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="29" />
-          <entry key="py" value="7" />
+          <entry key="csv" value="32" />
+          <entry key="py" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="29" />
-          <entry key="Python" value="7" />
+          <entry key="PLAIN_TEXT" value="32" />
+          <entry key="Python" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="6711" />
+          <entry key="py" value="8425" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="6711" />
+          <entry key="Python" value="8425" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/change_format.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+            <state relative-caret-position="72">
+              <caret line="4" column="45" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="45" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -81,11 +82,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/format_2019SS.csv">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formatcsv_to_excel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="1" column="251" lean-forward="true" selection-start-line="1" selection-start-column="251" selection-end-line="1" selection-end-column="264" />
+            <state relative-caret-position="159">
+              <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+              <folding>
+                <element signature="e#2709#3151#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/networkdata_2019SS.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="2" column="2" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -101,7 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Rankings</find>
       <find>View</find>
       <find>mainContent</find>
       <find>small-12</find>
@@ -129,6 +141,9 @@
       <find>Givenchy</find>
       <find>NEW ROW</find>
       <find>(C)</find>
+      <find>ges</find>
+      <find>Ko</find>
+      <find>25</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,6 +156,7 @@
         <option value="$PROJECT_DIR$/prac.py" />
         <option value="$PROJECT_DIR$/exclusive_crawler.py" />
         <option value="$PROJECT_DIR$/change_format.py" />
+        <option value="$PROJECT_DIR$/formatcsv_to_excel.py" />
       </list>
     </option>
   </component>
@@ -151,8 +167,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-18" />
-    <option name="y" value="32" />
+    <option name="x" value="219" />
+    <option name="y" value="140" />
     <option name="width" value="1052" />
     <option name="height" value="706" />
   </component>
@@ -184,6 +200,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -242,6 +263,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="formatcsv_to_excel" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="SNA_model" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/formatcsv_to_excel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="model_crawler" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SNA_model" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -291,10 +334,12 @@
       <item itemvalue="Python.exclusive_crawler" />
       <item itemvalue="Python.prac" />
       <item itemvalue="Python.change_format" />
+      <item itemvalue="Python.formatcsv_to_excel" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.change_format" />
+        <item itemvalue="Python.formatcsv_to_excel" />
         <item itemvalue="Python.exclusive_crawler" />
         <item itemvalue="Python.prac" />
         <item itemvalue="Python.model_crawler" />
@@ -315,16 +360,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-18" y="32" width="1052" height="706" extended-state="0" />
+    <frame x="219" y="140" width="1052" height="706" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27425742" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27425742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5325733" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.5325733" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -332,7 +377,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32899022" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -419,20 +464,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/change_format.py">
+    <entry file="file://$PROJECT_DIR$/formatsample.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/networkdata_2019SS.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="108">
+          <caret line="2" column="2" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/format_2019SS.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="1" column="251" lean-forward="true" selection-start-line="1" selection-start-column="251" selection-end-line="1" selection-end-column="264" />
+        <state>
+          <caret column="49" lean-forward="true" selection-start-column="49" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formatcsv_to_excel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+          <folding>
+            <element signature="e#2709#3151#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/change_format.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -2,7 +2,8 @@ import pandas as pd
 import operator
 
 # header = None
-df = pd.read_excel('/Users/deinm/Desktop/SNA/2019SS.xlsx',sheet_name='Sheet1')
+# df = pd.read_excel('/Users/deinm/Desktop/SNA/2019SS.xlsx',
+df = pd.read_excel('/Users/deinm/Desktop/SNA/2019FW.xlsx',sheet_name='Sheet1')
 
 value_dict = {}
 
@@ -33,6 +34,11 @@ for i in range(318):
 
             print(model)
 
-with open('format_2019SS.csv','w') as f:
+# with open('format_2019SS.csv','w') as f:
+with open('format_2019FW.csv', 'w') as f:
     for key, values in sorted_value_dict.items():
-        f.write(key+","+','.join(values)+"\n")
+        for single_show in values:
+            f.write(key+", ")
+            show = single_show.split('S/S')[0].strip()
+            f.write(show)
+            f.write("\n")
